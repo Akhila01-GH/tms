@@ -1,0 +1,43 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+ <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}">
+{% endblock %}
+{% block content %}
+<html>
+<body>
+    <h1>Task Dashboard</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Task Title</th>
+                <th>Due Date</th>
+                <th>Task Content</th>
+                <th>Employee mail</th>
+                <th>Assigned by</th>
+                <th>Task Status</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task[0] }}</td>
+                <td>{{ task[1] }}</td>
+                <td>{{ task[2] }}</td>
+                <td>{{ task[3] }}</td>
+                <td>{{ task[4] }}</td>
+                <td>{{ task[5] }}</td>
+                <td>{{ task[6] }}</td>
+                <td><a href="/adminupdate">Update</a></td>
+                <td><a href="/taskdelete/{{ task[0] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}   
+</body>
+</html>

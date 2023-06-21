@@ -1,0 +1,29 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+ <link rel="stylesheet" href="{{url_for('static',filename='addtask.css')}}">
+{% endblock %}
+{% block content %}
+<html>
+<head>
+    <title>Update Task</title>
+</head>
+<body>
+    <h1>Update Task</h1>
+    <form action="/adminupdate" method="POST">
+        <label for="taskid">Task ID:</label>
+        <input type="text" name="taskid" id="taskid"><br><br>
+
+        <label for="tasktitle">Task Title:</label>
+        <input type="text" name="tasktitle" id="tasktitle"><br><br>
+
+        <label for="duedate">Due Date:</label>
+        <input type="date" name="duedate" id="duedate"><br><br>
+
+        <label for="taskcontent">Task Content:</label>
+        <textarea name="taskcontent" id="taskcontent"></textarea><br><br>
+
+        <input type="submit" value="Update">
+    </form>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,46 @@
+{% extends 'emphome.html' %}
+{% block addcss %}
+ <link rel="stylesheet" href="{{url_for('static',filename='empdashboard.css')}}">
+{% endblock %}
+{% block content %}
+<html>
+<body>
+    <h1>Task Table Status</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Task Title</th>
+                <th>Due Date</th>
+                <th>Task Content</th>
+                <th>Assigned to</th>
+                <th>Assigned by</th>
+                <th>Task Status</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task[0] }}</td>
+                <td>{{ task[1] }}</td>
+                <td>{{ task[2] }}</td>
+                <td>{{ task[3] }}</td>
+                <td>{{ task[4] }}</td>
+                <td>{{ task[5] }}</td>
+                <td><form action="/empupdate" method="post">
+                    <select name="status">
+                        <option value="">--select--</option>
+                    <option value="completed">Completed</option>
+                    <option value="not completed">Not Completed</option>
+                    <option value="in progress">In Progress</option>
+                  </select>
+                  <input type="submit" value="Update"></form></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}   
+</body>
+</html>

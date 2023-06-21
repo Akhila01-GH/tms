@@ -1,0 +1,39 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+ <link rel="stylesheet" href="{{url_for('static',filename='addtask.css')}}">
+{% endblock %}
+{% block content %}
+<html>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <center><b>{{ message }}</b></center>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<body>
+<br>
+    <div class="container">
+        <h1>Add Task</h1>
+        <form method="post">
+            <label for="taskid">Title ID:</label>
+            <input type="int" id="taskid" placeholder="Enter title id..."  name="taskid" required/>
+
+            <label for="tasktitle">Title:</label>
+            <input type="text" id="tasktitle" placeholder="Enter a title..."  name="tasktitle" required/>
+
+            <label for="duedate">Due Date:</label>
+            <input type="date" id="duedate" name="duedate" required/>
+
+            <label for="Assigned to">Assigned to:</label>
+            <input type="text" id="assigned_to"  name="assigned_to" required/>
+
+            <label for="taskcontent">Content:</label>
+            <textarea id="contentField" class="content-field" placeholder="Write your content..." name="taskcontent" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

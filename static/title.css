@@ -1,0 +1,25 @@
+* {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/004/708/652/small_2x/simple-purple-background-flat-purple-gradation-wavy-background-vector.jpg');
+    background-size: cover;
+}
+h1 {
+    font-size: 50px; /* Increase the font size as per your requirement */
+}
+
+.btnstyle {
+    background-color:rgb(98, 3, 117);
+    color:rgb(255, 255, 255);
+    padding:20px;
+    border-radius: 8px;
+    border:none;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+.student {
+    margin-top:23%; 
+}
