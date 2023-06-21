@@ -364,5 +364,5 @@ def taskdelete(id):
         cursor.close()
         flash('Task deleted successfully')
         return redirect(url_for('dashboard'))
-if __name__="__main__":
+if __name__=="__main__":
     app.run()
